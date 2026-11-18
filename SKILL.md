@@ -153,6 +153,8 @@ devices responsive. Heavy WebGL/shader effects must be justified and degrade gra
 
 ## Evidence-based audit
 
+Use the optional browser audit helper in `scripts/audit-browser.mjs` when the target project has Playwright installed. It captures a responsive viewport matrix and collects runtime errors, failed requests, likely unnamed controls, horizontal overflow, and optional axe findings. Read `scripts/README.md` for setup and limitations. Treat its output as triage evidence, not a design verdict or proof of WCAG conformance.
+
 Do not rewrite immediately. Inspect routes, components, styles, runtime, and states. Review hierarchy,
 spacing, type, contrast, imagery, content, interactions, responsive behavior, keyboard paths,
 motion, performance, and accessibility. Each finding includes severity, location, evidence, impact,
