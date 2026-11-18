@@ -15,6 +15,9 @@ Read `SKILL.md`. It is the single entry point and routes work to focused playboo
 Frontend-skill/
 ├── SKILL.md
 ├── README.md
+├── scripts/
+│   ├── README.md
+│   └── audit-browser.mjs
 ├── recipes/
 │   ├── component-recipes.md
 │   ├── motion-recipes.md
