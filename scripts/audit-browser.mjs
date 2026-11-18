@@ -123,7 +123,7 @@ try {
           const unnamed = controls.filter((element) => {
             const labelledBy = element.getAttribute("aria-labelledby");
             const labelledByText = labelledBy
-              ? labelledBy.split(/\\s+/).map((id) => document.getElementById(id)?.textContent ?? "").join(" ").trim()
+              ? labelledBy.split(/\s+/).map((id) => document.getElementById(id)?.textContent ?? "").join(" ").trim()
               : "";
             const label = element.labels ? [...element.labels].map((item) => item.textContent ?? "").join(" ").trim() : "";
             const name = element.getAttribute("aria-label") ||
@@ -190,7 +190,7 @@ try {
 }
 
 const reportPath = path.join(outputDir, "report.json");
-await writeFile(reportPath, JSON.stringify(report, null, 2) + "\\n", "utf8");
+await writeFile(reportPath, JSON.stringify(report, null, 2) + "\n", "utf8");
 
 const failed = report.results.filter((result) =>
   result.navigationError ||
@@ -201,7 +201,7 @@ const failed = report.results.filter((result) =>
   result.axeViolations.length > 0
 ).length;
 
-console.log(`\\nReport: ${reportPath}`);
+console.log(`\nReport: ${reportPath}`);
 console.log(`Routes: ${routes.length} | Viewports: ${viewports.length} | Findings on: ${failed} capture(s)`);
 console.log("Review screenshots and report.json manually. A clean report does not prove visual quality or WCAG conformance.");
 if (failed > 0) process.exitCode = 1;
