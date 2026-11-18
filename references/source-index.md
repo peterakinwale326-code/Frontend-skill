@@ -1,33 +1,44 @@
-# Source Inventory & Provenance
+# Source Inventory and Provenance
 
-The uploaded archive was inspected (approximately 2,450 non-Git files across several source
-projects, plus nested Git metadata). This branch consolidates their shared design and engineering
-principles into one master skill and focused reference guides. It does **not** vendor every
-original source file, dataset, font, image, demo, or nested Git history. The archive contained
-large duplicated assets and third-party materials; importing all of them blindly would bloat the
-skill and risk violating source-specific license/attribution requirements.
+The uploaded archive was inspected: approximately 2,500 non-Git files across several source groups,
+plus nested Git metadata. The current repository consolidates their shared design and engineering
+principles into one master skill and focused playbooks. It does **not** vendor every original source
+file, dataset, font, image, demo, script, generated asset, or nested Git history.
 
 ## Source groups reviewed
-- `Design_Principles_and_UI_UX_Reference.docx`: study references, motion suggestions, UX
-  principles, feature ideas, mobile checks, and anti-generic-design guidance.
-- `design-motion-principles`: create/audit motion workflows, accessibility, performance, and
-  recipes.
-- `skills`: focused animation and interface-engineering skills for animation creation/review,
-  gestures, mobile-native behavior, prototyping, library selection, and platform guidance.
-- `taste-skill`: frontend art direction, anti-generic design, page composition, visual assets,
-  interaction patterns, and browser quality gates.
-- `ui-ux-pro-max-skill`: design intelligence, design-system generation, searchable styles,
-  typography, color, components, charts, and supporting datasets.
 
-## License and attribution
-The uploaded archive includes third-party projects. Their license files and notices remain
-authoritative. Before copying any original code, dataset, image, font, demo, or asset into this
-repository, inspect that source project's license and preserve its required notices and credits.
-The master skill is an original synthesis/routing layer and is not an endorsement by any
-referenced author or project.
+- **Design_Principles_and_UI_UX_Reference.docx** — ten design-study references (Apple, Duolingo,
+  Linear, Pentagram, Muji, Airbnb, Aesop, Notion, Stripe, Framer), motion suggestions, UX patterns,
+  mobile checks, design hacks, and anti-generic-design guidance.
+- **design-motion-principles** — create/audit motion workflows, accessibility, performance, and
+  motion recipes.
+- **skills** — focused material on design engineering, animation creation/review, gestures,
+  mobile-native behavior, prototyping, UI-library selection, and platform guidance.
+- **taste-skill** — product-led art direction, anti-generic frontend design, page composition,
+  real imagery, motion restraint, and browser quality gates.
+- **ui-ux-pro-max-skill** — design intelligence, design-system generation, styles, typography,
+  color, components, charts, and supporting datasets.
 
-## How to use
-Use the root `SKILL.md` as the single entry point. The `references/` folder provides focused
-playbooks for visual systems, motion, quality gates, and provenance. Consult the upstream
-projects for their full specialist instructions when a task requires detail beyond this
-synthesis.
+## How source principles are applied
+
+The master skill and playbooks synthesize principles into an implementation workflow:
+product discovery → visual thesis → page structure and tokens → real components and states →
+responsive/accessibility implementation → purposeful motion → browser QA and honest release report.
+
+The ten named websites are study references, not templates to copy. Extract the relevant principle
+from each reference and adapt it to the actual product. Do not imitate a site's brand, layout, or
+assets without permission.
+
+## Licensing and attribution
+
+The archive includes third-party projects with separate licenses and notices. Their license files
+remain authoritative. Before copying any original code, dataset, image, font, demo, or asset into
+this repository, inspect that source project's license and preserve required notices and credits.
+Do not assume that one project's license applies to the entire archive. The master skill and
+focused playbooks are an original synthesis and are not an endorsement by any referenced author or
+project.
+
+## Use
+
+Use the root `SKILL.md` as the entry point. Read only the relevant focused guide for the task.
+Consult the original upstream project when deeper implementation details or assets are required.
