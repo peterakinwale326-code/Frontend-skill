@@ -2,8 +2,8 @@
 
 A product-first frontend design and engineering skill for building interfaces that feel specific to
 the product—not generic templates. It combines product discovery, art direction, anti-slop rules,
-design systems, page architecture, component recipes, motion, responsive behavior, accessibility,
-React/Next.js and Tailwind guidance, and evidence-based visual QA.
+design systems, page architecture, component recipes, SaaS/dashboard patterns, motion, responsive
+behavior, accessibility, framework guidance, and evidence-based visual QA.
 
 ## Start here
 
@@ -16,17 +16,22 @@ Frontend-skill/
 ├── SKILL.md
 ├── README.md
 ├── recipes/
-│   └── component-recipes.md
+│   ├── component-recipes.md
+│   ├── motion-recipes.md
+│   └── saas-dashboard-patterns.md
 ├── references/
 │   ├── accessibility.md
 │   ├── design-system.md
-│   ├── motion-system.md
 │   ├── motion-system-expanded.md
+│   ├── motion-system.md
 │   ├── quality-gates.md
 │   ├── responsive-mobile.md
-│   └── source-index.md
+│   ├── source-index.md
+│   ├── typography-color-layout.md
+│   └── visual-style-catalog.md
 ├── stacks/
 │   ├── component-library-selection.md
+│   ├── framework-adaptation.md
 │   ├── react-nextjs.md
 │   └── tailwind-css.md
 └── workflows/
@@ -41,6 +46,8 @@ Frontend-skill/
 - Starts with the product, audience, user job, and real evidence.
 - Explicitly rejects generic AI-looking patterns and fabricated product proof.
 - Uses decision rules to choose components, charts, motion, dependencies, and visual effects.
+- Includes visual directions, typography/color/layout foundations, SaaS/dashboard recipes, and
+  framework adaptation guidance.
 - Treats accessibility, mobile behavior, state coverage, and QA as implementation requirements.
 - Requires honest reporting of tests, limitations, and what remains unverified.
 
