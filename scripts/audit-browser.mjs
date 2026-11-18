@@ -130,7 +130,8 @@ try {
               labelledByText ||
               label ||
               element.getAttribute("title") ||
-              (element.tagName === "INPUT" ? element.getAttribute("placeholder") : "") ||
+              [...element.querySelectorAll("img[alt]")].map((img) => img.getAttribute("alt") ?? "").join(" ").trim() ||
+              element.value ||
               element.textContent?.trim();
             return !name;
           }).slice(0, 30).map((element) => ({
