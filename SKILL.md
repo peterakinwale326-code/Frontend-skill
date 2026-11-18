@@ -183,9 +183,17 @@ Read the focused guide that matches the task. Do not load every guide when one i
 ### Recipes
 - `recipes/component-recipes.md` — buttons, fields, selects, dialogs, menus, tabs, toasts,
   tooltips, cards, tables, empty states, forms, search, charts, and destructive actions.
+- `recipes/saas-dashboard-patterns.md` — workspace shells, dashboards, management tables, detail
+  pages, activity history, billing, team permissions, and dashboard anti-patterns.
+- `recipes/motion-recipes.md` — implementation starting points for disclosures, popovers, dialogs,
+  view transitions, gestures, staggered lists, and loading states.
 
 ### References
 - `references/design-system.md` — concise visual-system overview.
+- `references/visual-style-catalog.md` — editorial, product-led, technical, warm, minimal,
+  expressive, luxury, and data/operations directions with selection rules.
+- `references/typography-color-layout.md` — type scales, semantic color, contrast matrices, grids,
+  spacing, density, and geometry.
 - `references/motion-system.md` and `references/motion-system-expanded.md` — motion decisions,
   timing, physics, reduced motion, and performance.
 - `references/responsive-mobile.md` — responsive and mobile browser behavior.
@@ -197,6 +205,8 @@ Read the focused guide that matches the task. Do not load every guide when one i
 - `stacks/react-nextjs.md` — server/client boundaries, data, forms, media, and verification.
 - `stacks/tailwind-css.md` — version-aware Tailwind, token use, responsive utilities, and CSS hygiene.
 - `stacks/component-library-selection.md` — evaluate and integrate accessible UI primitives.
+- `stacks/framework-adaptation.md` — adapt the system to Vue, SvelteKit, Astro, static HTML, and
+  React Native without copying framework-specific patterns blindly.
 
 ## Source and license boundary
 
