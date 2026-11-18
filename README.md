@@ -1,23 +1,57 @@
-# Frontend Skill — Unified Design & Engineering System
+# Frontend Design Engineering Skill
 
-A task-routed master skill for product design, UI/UX, design systems, frontend implementation,
-motion, accessibility, responsive behavior, and quality assurance.
+A product-first frontend design and engineering skill for building interfaces that feel specific to
+the product—not generic templates. It combines product discovery, art direction, anti-slop rules,
+design systems, page architecture, component recipes, motion, responsive behavior, accessibility,
+React/Next.js and Tailwind guidance, and evidence-based visual QA.
+
+## Start here
+
+Read `SKILL.md`. It is the single entry point and routes work to focused playbooks.
+
+## Repository structure
+
+```text
+Frontend-skill/
+├── SKILL.md
+├── README.md
+├── recipes/
+│   └── component-recipes.md
+├── references/
+│   ├── accessibility.md
+│   ├── design-system.md
+│   ├── motion-system.md
+│   ├── motion-system-expanded.md
+│   ├── quality-gates.md
+│   ├── responsive-mobile.md
+│   └── source-index.md
+├── stacks/
+│   ├── component-library-selection.md
+│   ├── react-nextjs.md
+│   └── tailwind-css.md
+└── workflows/
+    ├── audit-qa-and-release.md
+    ├── design-decision-engine.md
+    ├── design-system-and-page-patterns.md
+    └── discovery-and-art-direction.md
+```
+
+## What makes it different
+
+- Starts with the product, audience, user job, and real evidence.
+- Explicitly rejects generic AI-looking patterns and fabricated product proof.
+- Uses decision rules to choose components, charts, motion, dependencies, and visual effects.
+- Treats accessibility, mobile behavior, state coverage, and QA as implementation requirements.
+- Requires honest reporting of tests, limitations, and what remains unverified.
 
 ## Use
-Install or copy `SKILL.md` and `references/` into your agent's supported skills location.
-Use the master skill as the entry point; it routes work to focused reference guides.
 
-## Structure
-- `SKILL.md` — master operating instructions and end-to-end workflow.
-- `references/design-system.md` — visual language, layout, content, and component systems.
-- `references/motion-system.md` — motion decisions, patterns, and performance.
-- `references/quality-gates.md` — accessibility, responsive UX, states, and release checks.
-- `references/source-index.md` — source inventory, provenance, and licensing notes.
+Copy `SKILL.md` and the referenced folders into the skills location supported by your coding agent.
+Keep the relative folder structure intact. If using a different agent, adapt only its skill metadata
+and invocation format; preserve the actual design and engineering rules.
 
-## Philosophy
-Understand the product first. Build a coherent system. Use real content and product evidence.
-Make every state work. Verify the result instead of declaring it finished because it looks good
-in one screenshot.
+## Provenance
 
-Third-party projects and authors referenced in the supplied source archive retain their own
-ownership and licenses. This synthesis is not an endorsement by those authors.
+The uploaded archive was reviewed and synthesized. This repository does not claim to vendor every
+upstream file, dataset, font, image, demo, script, or nested Git history. See
+`references/source-index.md` before redistributing upstream materials.
