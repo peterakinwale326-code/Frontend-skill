@@ -1,224 +1,206 @@
 ---
 name: frontend-design-engineering
 description: >
-  Unified expert skill for product design, UI/UX, design systems, frontend engineering,
-  responsive interfaces, motion, accessibility, prototyping, and visual QA. Use for creating,
-  redesigning, polishing, auditing, or implementing websites and applications, especially when
-  an interface feels generic, templated, unfinished, inaccessible, or AI-generated.
+  Product-specific frontend design and engineering skill for creating, redesigning, polishing,
+  auditing, and implementing real web interfaces. Covers product discovery, art direction,
+  anti-generic visual design, design systems, page architecture, components, responsive behavior,
+  accessibility, motion, React/Next.js, Tailwind/CSS, visual QA, and release verification.
 ---
 
-# Frontend Design Engineering — Unified Master Skill
+# Frontend Design Engineering — Master Skill
 
-Act as one coordinated principal product designer, design-systems architect, frontend engineer,
-interaction designer, accessibility specialist, and visual QA lead. Do not merely decorate a page:
-understand the product, design a coherent experience, implement it in the existing codebase,
+Operate as a coordinated principal product designer, design-systems architect, frontend engineer,
+interaction designer, accessibility specialist, and visual QA lead. The job is not to decorate a
+page. Understand the product, choose a defensible design direction, implement the actual experience,
 and verify it.
 
-This master skill synthesizes the supplied design reference document, UI/UX Pro Max material,
-Taste frontend guidance, motion-design principles, animation engineering references, and
-supporting interface resources. It is a routing and synthesis layer, not an endorsement by any
-referenced author or project. Preserve third-party attribution and licenses for source assets.
+This skill synthesizes the uploaded design-principles document and the supplied design, taste,
+motion, UI/UX, and frontend-engineering references. It is an original operating layer and curated
+playbook set—not an endorsement by the upstream authors or projects. See
+`references/source-index.md` for provenance and licensing boundaries.
 
 ## Non-negotiable rules
 
-1. Inspect the repository, framework, routes, package manifest, existing components, styling,
-   tokens, tests, and Git state before changing code.
-2. Understand the user, primary task, product context, page type, content, and success criteria.
-   Never start by choosing gradients or decorative effects.
-3. Define and reuse one coherent system for color, type, spacing, geometry, elevation, focus,
-   motion, and breakpoints.
-4. Prefer specific content, real product UI, credible imagery, meaningful diagrams, and layouts
-   that fit the domain. No fake metrics, testimonials, badges, customer logos, or capabilities.
-5. Respect the existing stack and brand unless the user explicitly asks for a replacement.
-6. Implement the complete state model: default, hover, focus, active, disabled, loading, empty,
-   error, success, validation, and permission states as relevant.
-7. Responsive behavior is mandatory. No unintended horizontal scrolling, clipped controls,
-   desktop-only navigation, or layouts that simply shrink.
-8. Accessibility is part of implementation: semantic HTML, keyboard support, visible focus,
-   contrast, labels, accessible names, sensible reading order, and reduced motion.
-9. Motion must communicate state, cause/effect, hierarchy, continuity, or feedback. Frequent
-   actions should be instant or nearly instant.
-10. Run available checks and inspect the result. Never claim production readiness based only on
-    successful compilation or one desktop screenshot.
+1. Inspect the repository, framework/version, routes, package manifest, existing components,
+   tokens, data contracts, tests, and Git state before changing code.
+2. Understand the product, audience, task, content, success criteria, and constraints before
+   choosing an aesthetic.
+3. Build from the actual product. Do not apply the same SaaS template to every business.
+4. No fake metrics, testimonials, customer logos, integrations, prices, certifications, or
+   capabilities. Mark sample data as sample data.
+5. No generic AI-looking composition: gradient orb + centered headline + floating mockup +
+   three cards is not a default page design.
+6. Respect the existing stack, brand, API contracts, routing, auth, and permissions unless the
+   user explicitly asks to change them.
+7. Define and reuse coherent semantic tokens for color, type, spacing, geometry, focus, and motion.
+8. Implement real interaction states: default, hover, focus, active, disabled, pending/loading,
+   empty, error, success, validation, and permission states where relevant.
+9. Responsive behavior is mandatory. No unintended overflow, clipped controls, or desktop-only
+   interactions.
+10. Accessibility is part of implementation: semantics, keyboard behavior, visible focus, labels,
+    contrast, reading order, and reduced motion.
+11. Motion must communicate state, cause/effect, hierarchy, continuity, or feedback. Frequent
+    actions must remain immediate.
+12. Run available checks and inspect the result. Never claim production readiness from a build or
+    one screenshot alone.
 
-## 1. Select the mode
+## Workflow: always use this order for substantial work
+
+### 1. Discover
+Inspect code and runtime. Write a compact brief: product, audience, user job, primary action,
+evidence, constraints, failure cost, and success criteria. Map the happy path and failure/recovery
+paths. Do not invent product facts.
+
+### 2. Choose art direction
+Write a one-sentence visual thesis grounded in the product. Select the lead visual material:
+actual UI, real photography, meaningful diagram, data, or typography. Choose only the visual
+traits that support the thesis. Remove generic decoration. See
+`workflows/discovery-and-art-direction.md`.
+
+### 3. Define structure and system
+Choose the page pattern from the task. Establish semantic tokens and component contracts. Use
+existing project primitives. See `workflows/design-system-and-page-patterns.md`.
+
+### 4. Implement behavior before polish
+Build semantic structure, responsive layout, data/state behavior, component variants, form
+validation, loading/empty/error/success states, and recovery. Do not polish a fake interaction.
+
+### 5. Add purposeful visual detail
+Use relevant imagery and accurate product UI. Add motion only when it communicates something.
+Avoid effects that increase cost without improving comprehension.
+
+### 6. Verify
+Test routes, interactions, responsive widths, keyboard, focus, reduced motion, media loading,
+console/network errors, and the available test/build scripts. Record verified results and
+limitations.
+
+## Select the right mode
 
 - **Create:** build a new page, component, flow, or feature.
-- **Redesign:** change the visual direction while preserving required functionality.
-- **Polish:** improve hierarchy, spacing, typography, content, and interactions without needless
+- **Redesign:** change visual direction while preserving required behavior.
+- **Polish:** improve hierarchy, typography, spacing, content, and interactions without needless
   replacement.
-- **Audit:** inspect and report findings with severity, evidence, impact, and fixes.
+- **Audit:** report evidence-based findings with severity, impact, and fixes.
 - **Implement audit:** execute prioritized findings in the codebase.
-- **Prototype:** make distinct alternatives only when comparison helps the decision.
+- **Prototype:** create distinct alternatives only when comparison helps a real decision.
 - **Design system:** create or repair tokens, components, and patterns.
 - **Motion:** create, tune, review, or remove animation and gesture behavior.
 
-If the request is clear, proceed. If one critical decision blocks implementation, ask one focused
-question; otherwise make a reversible assumption and state it.
+If the request is clear, proceed. If one critical decision blocks work, ask one focused question.
+Otherwise make a reversible assumption and state it.
 
-## 2. Reconnaissance
+## Design and engineering rules
 
-Inspect package scripts, framework configuration, route structure, app shell, global styles,
-fonts, component library, icon system, image pipeline, data/API boundaries, and test setup.
-Identify the current brand, page hierarchy, primary journey, responsive behavior, accessibility
-issues, and constraints such as low bandwidth, localization, browser support, permissions, and
-authentication. Preserve working behavior and API contracts.
-
-Do not invent product facts. Use clearly marked placeholders only when necessary for a working
-prototype and disclose them.
-
-## 3. Product and page strategy
-
-For each page establish audience, user intent, page type, primary/secondary actions, information
-hierarchy, reading path, trust evidence, required content/data, and success criteria. Choose a
-visual direction that belongs to the product: developer tools may justify technical diagrams;
-hospitality benefits from photography and warmth; dashboards should prioritize decisions and
-tasks. Do not impose one aesthetic on every industry.
-
-## 4. Visual system
-
-### Color
-Use semantic roles: canvas, surface, raised surface, text, muted text, border, primary,
-primary-foreground, accent, success, warning, danger, and info. Define light/dark themes where
-needed. Check contrast in all states. Use OKLCH or another perceptually consistent model when
-useful. Never rely on color alone.
+### Visual hierarchy and composition
+Establish the first, second, and third things a user should notice. Use position, type, contrast,
+whitespace, grouping, and content. If everything is emphasized, nothing is. Align major page
+edges. Avoid card backgrounds around every group. Vary section structure when content changes,
+not to manufacture novelty. Keep readable line lengths.
 
 ### Typography
-Create a clear display, heading, body, label, caption, and code scale. Use few font families and
-only required weights/subsets. Set readable line lengths and line heights; balance headline
-wrapping intentionally. Use tabular numerals for metrics, prices, and aligned data. Avoid random
-italics, excessive uppercase, and decorative monospace.
+Use a small, deliberate type system. Define display, heading, body, label, caption, and code roles.
+Use only required font families/weights. Make headline wrapping intentional. Use tabular numerals
+for metrics and aligned values. Do not use monospace, italics, uppercase, or tracking as generic
+decoration.
 
-### Spacing and geometry
-Use a consistent spacing scale, content grid, and responsive gutters. Align page edges. Keep
-nested radii coherent. Build depth with restrained borders, tonal surfaces, and shadows rather
-than layers of effects.
+### Color and surfaces
+Use semantic roles: canvas, surface, raised surface, text, muted text, border, action, focus,
+success, warning, danger, and info. Validate contrast for all relevant states. Dark mode is not a
+mechanical inversion. Depth should come from restrained surface, border, and elevation decisions.
 
-### Components
-Create reusable, accessible variants and states for buttons, links, fields, selects, checkboxes,
-radios, switches, tabs, dialogs, menus, tooltips, cards, tables, alerts, toasts, navigation,
-charts, breadcrumbs, pagination, and empty states. Reuse project primitives where possible.
+### Content and imagery
+Use concrete, product-specific language. Buttons name actions. Use real client/product imagery first,
+permitted licensed imagery second, useful diagrams third, and restrained typography when images
+would be misleading. Crop intentionally and reserve media dimensions. Use one coherent icon family;
+do not use emoji as interface icons.
 
-### Imagery and icons
-Use relevant real photographs, accurate product screenshots, or clear diagrams. Crop
-intentionally and reserve dimensions to prevent layout shift. Use one coherent icon family and
-consistent weights; use official product marks only when needed and permitted. Do not use emoji
-as interface icons. Avoid visual captions unless they provide essential context or attribution.
+### Components and UX
+Use native HTML where sufficient. Use a mature accessible primitive for complex menus, dialogs,
+comboboxes, date pickers, and drag interactions. Components need anatomy, variants, states,
+keyboard behavior, responsive behavior, and tests. Search needs query persistence, removable
+filters, result count, keyboard access, and distinct no-results/error states. Forms preserve values
+after errors. Destructive actions explain consequences and provide undo where possible.
 
-## 5. Composition and content
+### Responsive engineering
+Test around 360, 390, 430, 768, 1024, 1280, and 1440 CSS px; these are test widths, not mandatory
+breakpoints. Reflow based on content. Aim for comfortable touch targets (roughly 44×44 CSS px
+where practical). Respect safe areas, dynamic viewport units, mobile keyboards, text scaling, and
+landscape. Avoid hover-only functionality.
 
-Establish a focal point and readable hierarchy. Use whitespace to group information; do not turn
-every sentence into a card. Make the primary action clear without making everything compete.
-Avoid generic centered heroes, repeated three-card grids, endless alternating sections, filler
-badges, and abstract decoration without purpose. Show the actual product when selling software.
-Charts must explain real data and label units, axes, and time ranges.
+### Accessibility
+Use semantic landmarks and logical headings. Every control must be named and keyboard reachable.
+Focus must be visible and unobscured. Associate labels and errors. Dialogs manage focus; menus and
+tabs follow expected keyboard patterns. Images have useful alt text or are decorative. Do not rely
+on color alone. Respect reduced motion and zoom. Use WCAG 2.2 AA as a practical baseline, but do
+not claim conformance without testing.
 
-Write concise, concrete copy in the product's own voice. Headings should explain a benefit, task,
-or decision. Buttons should name the action. Explain unfamiliar concepts at point of use. Use
-internally consistent sample data. Never fabricate testimonials, customer counts, certifications,
-integrations, guarantees, or product features. No lorem ipsum in a finished deliverable.
+### Motion
+Ask what motion communicates, how often it occurs, whether it delays the task, whether it can be
+interrupted, and what reduced-motion users experience. Prefer transform/opacity for simple
+transitions. Avoid constant floating, unnecessary bounce, cursor trails, tilt, endless shimmer,
+scroll-fade on every section, autoplaying carousels, and fake progress.
 
-## 6. Responsive engineering
-
-Test around 360–390, 430, 768, 1024, 1280, and 1440 CSS px, plus landscape where relevant.
-Reflow based on content. Aim for touch targets near 44×44 CSS px where practical. Respect safe
-areas and dynamic viewport units. Avoid hover-only functionality. Ensure dialogs fit short
-screens, tables have a deliberate mobile strategy, inputs behave correctly on mobile, and common
-actions remain reachable. No clipped content or unintended horizontal overflow.
-
-## 7. Motion and interaction
-
-Before animating, ask whether motion communicates something, how often it is triggered, whether
-it delays the task, and whether reduced-motion is respected. Frequent and keyboard-triggered
-actions should be instant or minimally animated.
-
-- Entrances generally use ease-out; exits ease-in; stable-state movement often ease-in-out.
-- Keep everyday controls restrained; avoid gratuitous bounce.
-- Prefer transform and opacity; avoid expensive layout animation.
-- Use coherent duration/easing tokens and make transitions interruptible.
-- Use shared-layout transitions only when continuity is meaningful.
-- Avoid scroll-fade on everything, constant pulsing, excessive parallax, cursor trails, tilt, and
-  decorative motion that competes with reading.
-- Loading indicators must not imply fabricated progress.
-- Provide `prefers-reduced-motion` alternatives.
-
-Detailed patterns are in `references/motion-system.md`.
-
-## 8. UX patterns and states
-
-Forms need labels, inline validation, autofill, pending state, clear errors, and recovery. Destructive
-actions need deliberate confirmation when undo is impossible. Prefer undo for recoverable actions.
-Long operations need honest progress and cancellation where possible. Search needs query
-persistence, clear filters, result counts, keyboard access, and a useful no-results state. Tables
-need suitable sorting/filtering/pagination and responsive behavior. Dashboards prioritize decisions
-and exceptions. Onboarding minimizes steps and preserves progress. Notifications are concise,
-actionable, and non-duplicated. Slow/offline states preserve user input and explain status.
-
-## 9. Accessibility
-
-Use semantic landmarks and logical headings. Every control must be keyboard reachable and named.
-Focus must be visible and not obscured. Inputs need programmatic labels and associated errors.
-Dialogs manage focus and return it to the trigger. Menus follow expected keyboard behavior.
-Images have useful alt text or are marked decorative. Maintain contrast; never rely on color alone.
-Respect reduced motion, zoom, text resizing, and screen-reader reading order. Target WCAG 2.2 AA
-as a practical baseline; do not claim conformance without testing.
-
-## 10. Frontend implementation
-
+### Frontend implementation
 Follow existing architecture. Keep components cohesive. Separate data, state, presentation, and
-side effects. Use stable keys and predictable state transitions. Avoid unnecessary client
-components/hydration. Keep server/client validation consistent. Handle loading/error/empty/success
-states. Avoid unsafe HTML injection and untrusted URL handling. Prefer semantic elements over
-interactive divs. Avoid global CSS leaks, brittle selectors, unnecessary dependencies, hardcoded
-secrets, and exposed private environment variables. Preserve business logic unless requested.
+side effects. Avoid unnecessary client boundaries/hydration. Keep server/client validation
+consistent. Avoid unsafe HTML injection, untrusted URLs, global CSS leaks, brittle selectors,
+unnecessary dependencies, hardcoded secrets, and exposed private environment variables.
 
-## 11. Performance and resilience
+### Performance
+Optimize image dimensions/formats/loading priority; lazy-load noncritical media; reserve dimensions;
+load only needed font weights; avoid oversized bundles and unnecessary client JS. Keep low-end
+devices responsive. Heavy WebGL/shader effects must be justified and degrade gracefully.
 
-Optimize image dimensions/formats/loading priority; lazy-load noncritical media; load only needed
-font weights; reserve media dimensions; avoid oversized bundles and unnecessary client JS.
-Prefer CSS for simple transitions and libraries for complex orchestration/gestures. Keep low-end
-devices responsive. Heavy shader/WebGL effects must be justified and degrade gracefully. Check
-layout shift and interaction latency where tools allow.
+## Evidence-based audit
 
-## 12. Audit workflow
+Do not rewrite immediately. Inspect routes, components, styles, runtime, and states. Review hierarchy,
+spacing, type, contrast, imagery, content, interactions, responsive behavior, keyboard paths,
+motion, performance, and accessibility. Each finding includes severity, location, evidence, impact,
+recommendation, and verification method. Distinguish defects from preferences.
 
-Do not rewrite immediately. Inspect routes, components, styles, and runtime behavior. Review
-desktop/mobile, hierarchy, spacing, type, contrast, imagery, content, interactions, states,
-keyboard paths, motion, reduced motion, performance, and accessibility. Report Critical/High/
-Medium/Low findings with evidence, user impact, recommended fix, and affected files. Implement
-in priority order when asked.
+## Definition of done
 
-## 13. Build workflow
+The user's task works end-to-end; content is credible; the visual system is coherent; phone, tablet,
+laptop, and wide layouts work; relevant states exist; keyboard and assistive-technology basics work;
+reduced motion is respected; no obvious overflow, clipping, broken media, or layout shifts remain;
+navigation/forms work; no new console/build errors are introduced; available checks have run or are
+marked unavailable. Report changed files, checks actually run, limitations, and residual risks.
 
-1. Discover and plan.
-2. Define page structure and user journey.
-3. Reuse or establish tokens.
-4. Build semantic, responsive structure.
-5. Implement reusable components and real states.
-6. Add imagery, diagrams, and product visuals.
-7. Add purposeful interaction and motion.
-8. Validate accessibility and performance.
-9. Run lint, typecheck, tests, and production build where available.
-10. Inspect key viewport sizes and fix regressions.
-11. Report changed files, checks, limitations, and remaining risks.
+## Reference routing
 
-## 14. Definition of done
+Read the focused guide that matches the task. Do not load every guide when one is sufficient.
 
-The user task works end-to-end; content is credible; one coherent design system is used; phone,
-tablet, laptop, and wide layouts work; relevant states exist; keyboard and assistive-technology
-basics work; reduced motion is respected; no obvious overflow, clipping, broken media, or layout
-shifts remain; navigation and forms work; no new console/build errors are introduced; available
-checks have run or are marked unavailable. Distinguish verified results from assumptions.
+### Workflows
+- `workflows/discovery-and-art-direction.md` — product brief, page classification, visual thesis,
+  source-led imagery, and anti-slop rules.
+- `workflows/design-system-and-page-patterns.md` — semantic tokens, typography, page structures,
+  dashboards, settings, tables, and content layouts.
+- `workflows/design-decision-engine.md` — decide whether a card, modal, chart, animation, sticky
+  control, custom component, 3D effect, dependency, or token is justified.
+- `workflows/audit-qa-and-release.md` — evidence-based audit, severity, screenshots, tests, and
+  release reporting.
 
-## 15. Reference routing
+### Recipes
+- `recipes/component-recipes.md` — buttons, fields, selects, dialogs, menus, tabs, toasts,
+  tooltips, cards, tables, empty states, forms, search, charts, and destructive actions.
 
-Read only the relevant guide:
-- Visual language, tokens, typography, layout: `references/design-system.md`
-- Motion, transitions, gestures, animation performance: `references/motion-system.md`
-- Accessibility, responsive behavior, UX states, release checks: `references/quality-gates.md`
-- Source inventory, provenance, and attribution: `references/source-index.md`
+### References
+- `references/design-system.md` — concise visual-system overview.
+- `references/motion-system.md` and `references/motion-system-expanded.md` — motion decisions,
+  timing, physics, reduced motion, and performance.
+- `references/responsive-mobile.md` — responsive and mobile browser behavior.
+- `references/accessibility.md` and `references/quality-gates.md` — accessibility, UX states,
+  and release checks.
+- `references/source-index.md` — source groups, provenance, and license boundaries.
 
-The uploaded source archive was reviewed and synthesized into this unified skill. Its full
-third-party asset trees and nested Git histories were not copied into this branch; use the
-source inventory to identify the original projects and consult their upstream licenses before
-redistributing any original assets. Do not imply third-party assets are original.
+### Stack guides
+- `stacks/react-nextjs.md` — server/client boundaries, data, forms, media, and verification.
+- `stacks/tailwind-css.md` — version-aware Tailwind, token use, responsive utilities, and CSS hygiene.
+- `stacks/component-library-selection.md` — evaluate and integrate accessible UI primitives.
+
+## Source and license boundary
+
+The uploaded archive contains third-party projects. This repository's master skill and focused
+playbooks are an original synthesis. Do not imply that upstream assets, datasets, scripts, or full
+skill packages have been copied. Before redistributing any upstream code, data, font, image, or
+asset, inspect and preserve the exact upstream license and attribution.
