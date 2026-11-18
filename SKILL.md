@@ -218,5 +218,7 @@ Read only the relevant guide:
 - Accessibility, responsive behavior, UX states, release checks: `references/quality-gates.md`
 - Source inventory, provenance, and attribution: `references/source-index.md`
 
-Retained source libraries keep their own licenses, attribution, usage instructions, and
-dependencies. Do not imply third-party assets are original.
+The uploaded source archive was reviewed and synthesized into this unified skill. Its full
+third-party asset trees and nested Git histories were not copied into this branch; use the
+source inventory to identify the original projects and consult their upstream licenses before
+redistributing any original assets. Do not imply third-party assets are original.
