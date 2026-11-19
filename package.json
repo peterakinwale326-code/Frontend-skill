@@ -1,0 +1,37 @@
+{
+  "name": "pstack-frontend-design-skill",
+  "version": "0.1.0",
+  "description": "Install the PStacks Frontend Design Engineering skill into supported AI coding agents.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "bin": {
+    "pstack-frontend-design-skill": "./bin/cli.js"
+  },
+  "files": [
+    "bin/cli.js",
+    "SKILL.md",
+    "references/",
+    "recipes/",
+    "stacks/",
+    "workflows/",
+    "scripts/"
+  ],
+  "scripts": {
+    "test": "node --test",
+    "check": "node --check bin/cli.js && node --check tests/cli.test.js"
+  },
+  "keywords": [
+    "frontend",
+    "design",
+    "skill",
+    "ai-agents",
+    "codex",
+    "claude",
+    "cursor",
+    "windsurf",
+    "copilot"
+  ]
+}
