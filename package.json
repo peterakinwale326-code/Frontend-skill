@@ -20,7 +20,7 @@
     "tests/"
   ],
   "scripts": {
-    "test": "node --test",
+    "test": "node --test tests/cli.test.js",
     "check": "node --check bin/cli.js && node --check tests/cli.test.js"
   },
   "keywords": [
