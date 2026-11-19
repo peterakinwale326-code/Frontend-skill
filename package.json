@@ -2,7 +2,6 @@
   "name": "pstack-frontend-design-skill",
   "version": "0.1.0",
   "description": "Install the PStacks Frontend Design Engineering skill into supported AI coding agents.",
-  "license": "MIT",
   "type": "module",
   "engines": {
     "node": ">=18"
@@ -17,7 +16,8 @@
     "recipes/",
     "stacks/",
     "workflows/",
-    "scripts/"
+    "scripts/",
+    "tests/"
   ],
   "scripts": {
     "test": "node --test",
@@ -33,5 +33,13 @@
     "cursor",
     "windsurf",
     "copilot"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/peterakinwale326-code/Frontend-skill.git"
+  },
+  "homepage": "https://github.com/peterakinwale326-code/Frontend-skill#readme",
+  "bugs": {
+    "url": "https://github.com/peterakinwale326-code/Frontend-skill/issues"
+  }
 }
