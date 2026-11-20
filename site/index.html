@@ -339,4 +339,43 @@ const stage=document.getElementById('motion-stage'),pause=document.getElementByI
 pause.addEventListener('click',()=>{const isPaused=stage.classList.toggle('paused');pause.setAttribute('aria-pressed',String(isPaused));pause.textContent=isPaused?'Resume motion':'Pause motion'});
 reduce.addEventListener('click',()=>{const isReduced=document.body.classList.toggle('motion-off');reduce.setAttribute('aria-pressed',String(isReduced));reduce.textContent=isReduced?'Enable motion':'Reduce motion';if(isReduced){stage.classList.add('paused');pause.setAttribute('aria-pressed','true');pause.textContent='Resume motion'}else{stage.classList.remove('paused');pause.setAttribute('aria-pressed','false');pause.textContent='Pause motion'}});
 </script>
+<!-- PStacks halo cursor: fine-pointer devices only; native cursor remains for touch and text fields -->
+<style>
+@media (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+  body, a, button, [role="button"] { cursor:none !important; }
+  input, textarea, [contenteditable="true"], select { cursor:auto !important; }
+  .pstack-cursor{position:fixed;left:0;top:0;z-index:99999;pointer-events:none;opacity:0;will-change:transform;mix-blend-mode:difference;color:#d9f05b;transition:opacity .18s ease}
+  .pstack-cursor.is-visible{opacity:1}
+  .pstack-cursor__halo{width:34px;height:34px;border:1px solid currentColor;border-radius:50%;display:grid;place-items:center;transform:translate(-50%,-50%);transition:width .22s cubic-bezier(.2,.8,.2,1),height .22s cubic-bezier(.2,.8,.2,1),background .22s,border-color .22s}
+  .pstack-cursor__dot{width:4px;height:4px;border-radius:50%;background:currentColor}
+  .pstack-cursor.is-hover .pstack-cursor__halo{width:52px;height:52px;background:rgba(217,240,91,.12)}
+  .pstack-cursor.is-press .pstack-cursor__halo{width:25px;height:25px}
+  .pstack-cursor.is-link .pstack-cursor__halo{border-color:var(--lime)}
+  .pstack-cursor__label{position:absolute;left:27px;top:24px;font:9px var(--mono);letter-spacing:.08em;white-space:nowrap;opacity:0;transform:translateY(4px);transition:opacity .2s,transform .2s}
+  .pstack-cursor.is-link .pstack-cursor__label{opacity:1;transform:none}
+  .pstack-cursor__ripple{position:absolute;left:0;top:0;width:34px;height:34px;border:1px solid currentColor;border-radius:50%;transform:translate(-50%,-50%) scale(.3);opacity:0}
+  .pstack-cursor.is-ripple .pstack-cursor__ripple{animation:pstack-cursor-ripple .42s ease-out}
+  @keyframes pstack-cursor-ripple{0%{transform:translate(-50%,-50%) scale(.35);opacity:.7}100%{transform:translate(-50%,-50%) scale(2.5);opacity:0}}
+}
+@media (hover:none),(pointer:coarse),(prefers-reduced-motion:reduce){.pstack-cursor{display:none!important}}
+</style>
+<div class="pstack-cursor" id="pstack-cursor" aria-hidden="true"><span class="pstack-cursor__halo"><span class="pstack-cursor__dot"></span></span><span class="pstack-cursor__ripple"></span><span class="pstack-cursor__label">OPEN ↗</span></div>
+<script>
+(()=>{
+ const cursor=document.getElementById('pstack-cursor');
+ if(!cursor||!matchMedia('(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference)').matches)return;
+ let x=-100,y=-100,tx=-100,ty=-100,active=false;
+ const hoverTargets='a,button,[role="button"],.visual-card,.ui-card,.dribbble-shot';
+ const move=e=>{tx=e.clientX;ty=e.clientY;if(!active){x=tx;y=ty;active=true;cursor.classList.add('is-visible')}};
+ const tick=()=>{x+=(tx-x)*.22;y+=(ty-y)*.22;cursor.style.transform='translate3d('+x+'px,'+y+'px,0)';requestAnimationFrame(tick)};
+ requestAnimationFrame(tick);
+ document.addEventListener('mousemove',move,{passive:true});
+ document.addEventListener('mouseover',e=>{const el=e.target.closest(hoverTargets);cursor.classList.toggle('is-hover',!!el);cursor.classList.toggle('is-link',!!el&&el.matches('a,.visual-card,.ui-card,.dribbble-shot'));cursor.querySelector('.pstack-cursor__label').textContent=el?.matches('.visual-card,.ui-card,.dribbble-shot')?'VIEW ↗':'OPEN ↗'});
+ document.addEventListener('mousedown',()=>{cursor.classList.add('is-press','is-ripple')});
+ document.addEventListener('mouseup',()=>cursor.classList.remove('is-press'));
+ cursor.addEventListener('animationend',e=>{if(e.animationName==='pstack-cursor-ripple')cursor.classList.remove('is-ripple')});
+ document.addEventListener('mouseleave',()=>cursor.classList.remove('is-visible'));
+ document.addEventListener('mouseenter',()=>{if(active)cursor.classList.add('is-visible')});
+})();
+</script>
 </body></html>
