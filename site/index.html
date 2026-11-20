@@ -342,7 +342,7 @@ reduce.addEventListener('click',()=>{const isReduced=document.body.classList.tog
 <!-- PStacks halo cursor: fine-pointer devices only; native cursor remains for touch and text fields -->
 <style>
 @media (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
-  /* Suppress every native cursor, including child elements that override cursor:pointer. */
+  /* Halo replaces the native pointer globally on desktop; no child can fall back to a system arrow. */
   html, body, body *, body *::before, body *::after { cursor:none !important; }
   /* Native text caret remains visible; only the mouse pointer is suppressed. */
   input, textarea, select, [contenteditable="true"] { cursor:none !important; }
