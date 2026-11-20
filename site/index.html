@@ -153,6 +153,49 @@ body.motion-off *{animation:none!important;transition:none!important;scroll-beha
 @media(max-width:560px){.ui-studies{padding:72px 0}.ui-study{padding:9px}.dash-window{grid-template-columns:78px 1fr;min-height:360px}.dash-side{padding:12px 7px;gap:12px}.dash-nav{font-size:8px;padding:7px 5px}.dash-brand{font-size:10px}.dash-main{padding:13px 10px}.dash-head strong{font-size:13px}.dash-stat{padding:8px 6px}.dash-stat b{font-size:13px}.dash-stat em{display:block;margin:3px 0 0}.dash-content{grid-template-columns:1fr}.dash-panel:nth-child(2){display:none}.chart-bars{height:90px}.mobile-study{grid-template-columns:.9fr 1.1fr;gap:8px}.phone{padding:5px;border-radius:20px}.phone-screen{min-height:280px;padding:10px 8px}.phone-balance strong{font-size:19px}.mobile-notes strong{font-size:15px}.store-hero{min-height:135px}.store-copy h3{font-size:21px}}
 
 .dribbble-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.dribbble-shot{display:block;background:#dedbd1;border:1px solid rgba(23,23,21,.14);overflow:hidden;color:var(--ink)}.dribbble-shot img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.2,1)}.dribbble-shot:hover img{transform:scale(1.025)}.dribbble-meta{display:flex;justify-content:space-between;align-items:center;padding:15px 16px}.dribbble-meta b{display:block;font:600 15px var(--display)}.dribbble-meta small{display:block;font:10px var(--mono);color:var(--muted);margin-top:5px;text-transform:uppercase}.dribbble-open{border:1px solid var(--line);width:32px;height:32px;display:grid;place-items:center;transition:background .2s}.dribbble-shot:hover .dribbble-open{background:var(--lime)}.dribbble-note{font:10px var(--mono);color:var(--muted);margin-top:18px}.dribbble-note a{text-decoration:underline;text-underline-offset:3px}@media(max-width:560px){.dribbble-gallery{grid-template-columns:1fr;gap:12px}.dribbble-meta{padding:12px}}
+
+/* Refined interface gallery: quiet framing, scale, and product-specific polish */
+.ui-gallery{background:#e5e2d9;padding:clamp(64px,8vw,112px) 0}
+.ui-gallery-head{margin-bottom:38px}
+.ui-gallery-head h2{font-size:clamp(40px,5.5vw,76px);letter-spacing:-.075em}
+.ui-gallery-head p{max-width:470px;font-size:14px;line-height:1.75;color:#65645e}
+.ui-showcase{grid-template-columns:1.08fr .92fr;gap:20px}
+.ui-card{background:#eae8e1;border:1px solid rgba(30,30,28,.12);border-radius:14px;box-shadow:0 2px 3px rgba(22,22,20,.03),0 16px 38px rgba(22,22,20,.045);transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s}
+.ui-card:hover{transform:translateY(-4px);box-shadow:0 7px 12px rgba(22,22,20,.035),0 24px 50px rgba(22,22,20,.08)}
+.ui-screen{margin:12px;border-radius:9px;min-height:370px;box-shadow:0 1px 1px rgba(20,20,18,.04),0 10px 24px rgba(20,20,18,.06)}
+.ui-caption{padding:15px 17px 16px;border-top:1px solid rgba(23,23,21,.09);color:#77756e;letter-spacing:.045em}
+.ui-caption b{color:#35342f}
+.ui-topbar{background:#fff;height:48px}
+.commerce-screen{grid-template-columns:108px 1fr;min-height:340px}
+.commerce-side{background:#f7f7f3}
+.commerce-side .active{border-radius:4px;background:#edf2e7}
+.commerce-main{padding:20px 17px}
+.commerce-title{font-size:17px;letter-spacing:-.045em}
+.commerce-sub{font-size:10px}
+.commerce-stats{gap:8px}
+.commerce-stat{border-radius:7px;background:#fff;padding:10px}
+.commerce-stat strong{font-size:clamp(10px,1.1vw,14px)}
+.chart-area{height:116px;border-radius:7px}
+.tiny-table{font-size:9px}
+.tiny-table td,.tiny-table th{padding:7px 4px}
+.orbit-screen{min-height:370px;padding:19px;background:#111a17;border-radius:8px}
+.orbit-heading{font-size:23px;margin-top:25px}
+.orbit-metrics{gap:8px}
+.orbit-metric{border-radius:6px;padding:10px}
+.orbit-metric strong{font-size:clamp(11px,1.1vw,14px)}
+.orbit-chart{height:132px;border-radius:6px}
+.learn-screen{min-height:370px;padding:18px;background:#f7f6f1}
+.learn-hero{border-radius:8px;background:#e3e8d5;min-height:150px;padding:17px}
+.learn-hero h3{font-size:19px}
+.learn-illustration{background:#c5d0a8;border-radius:7px}
+.learn-course{border-radius:6px;padding:10px}
+.phone-wrap{background:#e8e5dc;min-height:370px}
+.phone{width:205px;border-radius:30px;border:5px solid #1d211f;box-shadow:0 18px 38px rgba(22,22,20,.18)}
+.phone-notch{height:13px}
+.wallet-card{border-radius:9px}
+.ui-screen:hover .chart-svg{filter:drop-shadow(0 2px 3px rgba(0,0,0,.1))}
+@media(max-width:760px){.ui-gallery-head{grid-template-columns:1fr;gap:16px}.ui-showcase{grid-template-columns:1fr;gap:14px}.ui-card:hover{transform:none}.ui-screen{margin:10px;min-height:unset}.commerce-screen{grid-template-columns:84px 1fr}.commerce-main{padding:12px}.commerce-stats{gap:4px}.commerce-stat{padding:7px}.commerce-stat strong{font-size:11px}.ui-caption{padding:13px 14px}.phone-wrap{min-height:320px}}
+@media(max-width:560px){.ui-gallery{padding:72px 0}.ui-gallery-head h2{font-size:clamp(38px,11vw,56px)}.commerce-screen{grid-template-columns:72px 1fr}.commerce-side{padding:10px 6px}.commerce-side div{padding:6px 4px}.commerce-title{font-size:14px}.commerce-sub{font-size:8px}.commerce-main{padding:10px}.commerce-stat{padding:6px}.commerce-stat small{font-size:7px}.commerce-stat strong{font-size:9px}.chart-area{height:90px}.orbit-screen{padding:12px;min-height:320px}.orbit-heading{font-size:19px}.orbit-metric{padding:7px}.orbit-metric small{font-size:7px}.orbit-metric strong{font-size:10px}.orbit-chart{height:100px}.learn-screen{padding:12px;min-height:320px}.learn-hero{min-height:125px;padding:12px}.learn-hero h3{font-size:16px}.learn-illustration{font-size:20px}.phone-wrap{min-height:300px}.phone{width:190px}}
 </style>
 </head>
 <body>
@@ -239,7 +282,7 @@ body.motion-off *{animation:none!important;transition:none!important;scroll-beha
 <a class="dribbble-shot reveal" href="https://dribbble.com/shots/26343082-E-commerce-Dashboard-UI-UX-Design" target="_blank" rel="noreferrer"><img loading="lazy" decoding="async" src="https://cdn.dribbble.com/userupload/48217779/file/1b9e425259b492a3c0b700f51b42f8ef.png?resize=1400x1050" alt="Dribbble ecommerce admin dashboard UI UX design"><span class="dribbble-meta"><span><b>E-commerce admin</b><small>Operations · Dashboard</small></span><span class="dribbble-open">↗</span></span></a>
 <a class="dribbble-shot reveal" href="https://dribbble.com/shots/27627802-Banking-Dashboard-UI-Design" target="_blank" rel="noreferrer"><img loading="lazy" decoding="async" src="https://cdn.dribbble.com/userupload/48099308/file/3164bafef5423eec77a40851fc737f7c.png?resize=1400x1050" alt="Dribbble banking dashboard UI design shot"><span class="dribbble-meta"><span><b>Banking workspace</b><small>Fintech · Dashboard</small></span><span class="dribbble-open">↗</span></span></a>
 </div>
-<p class="dribbble-note">Artwork belongs to its original designers and is displayed as reference. <a href="https://dribbble.com" target="_blank" rel="noreferrer">Browse Dribbble ↗</a></p>
+
 </div>
 </section>
 
